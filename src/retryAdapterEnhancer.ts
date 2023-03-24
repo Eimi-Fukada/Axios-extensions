@@ -1,11 +1,6 @@
-/**
- * @author Kuitos
- * @since 2020-02-18
- */
+import { AxiosAdapter, AxiosResponse } from "axios";
 
-import { AxiosAdapter, AxiosResponse } from 'axios';
-
-declare module 'axios' {
+declare module "axios" {
 	interface AxiosRequestConfig {
 		retryTimes?: number;
 	}
@@ -15,12 +10,13 @@ export type Options = {
 	times?: number;
 };
 
-export default function retryAdapterEnhancer(adapter: AxiosAdapter, options: Options = {}): AxiosAdapter {
-
+export default function retryAdapterEnhancer(
+	adapter: AxiosAdapter,
+	options: Options = {}
+): AxiosAdapter {
 	const { times = 2 } = options;
 
-	return async config => {
-
+	return async (config) => {
 		const { retryTimes = times } = config;
 
 		let timeUp = false;
@@ -37,8 +33,10 @@ export default function retryAdapterEnhancer(adapter: AxiosAdapter, options: Opt
 				count++;
 
 				/* istanbul ignore next */
-				if (process.env.LOGGER_LEVEL === 'info') {
-					console.info(`[axios-extensions] request start retrying --> url: ${config.url} , time: ${count}`);
+				if (process.env.LOGGER_LEVEL === "info") {
+					console.info(
+						`[axios-extensions] request start retrying --> url: ${config.url} , time: ${count}`
+					);
 				}
 
 				return request();
