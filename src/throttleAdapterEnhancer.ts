@@ -28,7 +28,7 @@ export default function throttleAdapterEnhancer(
 	) => {
 		const responsePromise = (async () => {
 			try {
-				const response = await adapter(config);
+				const response = await adapter(config as any);
 
 				cache.set(index, {
 					timestamp: Date.now(),
