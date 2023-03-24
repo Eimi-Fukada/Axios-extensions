@@ -1,4 +1,4 @@
-# Axios-extensions(由原 axios-extensions 改造而来，解决 buildURL 引入问题)
+# axios-extensions-pro(由原 axios-extensions 改造而来，解决 buildURL 引入、rollup.js 不支持导入 json 模块问题)
 
 ## Usage
 
