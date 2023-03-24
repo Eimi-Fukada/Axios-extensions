@@ -1,4 +1,6 @@
-# axios-extensions-pro(由原 axios-extensions 改造而来，解决 buildURL 引入、rollup.js 不支持导入 json 模块问题)
+# axios-extensions-pro
+
+由原 axios-extensions 改造而来，解决 buildURL 引入、rollup.js 不支持导入 json 模块、axios 版本过久等问题
 
 ## Usage
 
@@ -18,10 +20,6 @@ const http = axios.create({
 	),
 });
 ```
-
-### Enable Logging
-
-It is highly recommended to enable the request logging recorder in development environment(disabled by default).
 
 #### browser (webpack)
 

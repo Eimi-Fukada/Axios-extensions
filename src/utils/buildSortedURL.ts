@@ -1,5 +1,5 @@
 // @ts-ignore
-import buildURL from "axios/lib/helpers/buildURL";
+import buildURL from "../../node_modules/axios/lib/helpers/buildURL.js";
 
 export default function buildSortedURL(...args: any[]) {
 	const builtURL = buildURL(...args);
