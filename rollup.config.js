@@ -8,7 +8,7 @@ function genConfig(minimize = false) {
 	return {
 		input: "./esm/index.js",
 		output: {
-			name: "axios-extensions",
+			name: "axios-extensions-pro",
 			file: minimize
 				? "./dist/axios-extensions.min.js"
 				: "./dist/axios-extensions.js",
